@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: SWP - Sticky Header
- * Description: Change header's appearance upon scrolling
+ * Plugin Name: SWP - Fixed Header
+ * Description: Change header's appearance upon scrolling.
  * Version: 1.0
  * Author: Jake Almeda
  * Author URI: http://smarterwebpackages.com/
@@ -13,7 +13,10 @@
 class InfinityHeaderCopy {
 
 	public $addtheseclasses    = 'white',
-			$addthemwhentopisat = '50';
+		   $addthemwhentopisat = '50',
+		   $widthtargetelement = '.site-header',
+		   $widthtrigger	   = '700',
+		   $widthclasstoadd	   = 'coco_2017';
 
 	public function swp_infini_hack_scripts() {
 		
@@ -24,6 +27,9 @@ class InfinityHeaderCopy {
 	    $extra_var = array(
 	        'swp_addtheseclasses' 	=> $this->addtheseclasses,
 	        'swp_whentopison'	 	=> $this->addthemwhentopisat,
+	        'swp_wi_element'		=> $this->widthtargetelement,
+	        'swp_wi_trigger'		=> $this->widthtrigger,
+	        'swp_wi_class'			=> $this->widthclasstoadd,
 	    );
 	    wp_localize_script( 'swp_infiniheader', 'infini_extra_var', $extra_var );
 	     
